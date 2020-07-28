@@ -1,12 +1,15 @@
 <template>
   <div>
-      newsggggggggggggggg
+      <div v-for="user in this.$store.state.news" :key="user.id">{{ user.title }}</div>
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
+    created() {
+        this.$store.dispatch('FETCH_NEWS');
+    }
 }
 </script>
 
