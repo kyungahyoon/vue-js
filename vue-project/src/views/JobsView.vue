@@ -1,17 +1,14 @@
 <template>
     <div>
-        <div v-for="job in this.$store.state.jobs" :key="job.id">{{  job.title }}</div>
+        <list-item></list-item>
     </div>
 </template>
 
 <script>
+import ListItem from '../components/ListItem'
 export default {
-    created () {    
-        this.$store.dispatch('FETCH_JOBS')
+    components: {
+        ListItem
     }
 }
 </script>
-
-<style>
-
-</style>

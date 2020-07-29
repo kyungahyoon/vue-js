@@ -1,18 +1,14 @@
 <template>
-  <div>
-      <div v-for="user in this.$store.state.news" :key="user.id">{{ user.title }}</div>
-  </div>
+    <div>
+        <list-item></list-item>
+    </div>
 </template>
 
 <script>
-
-export default {
-    created() {
-        this.$store.dispatch('FETCH_NEWS');
+    import ListItem from '../components/ListItem' 
+    export default {
+        components: {
+            ListItem
+        }
     }
-}
 </script>
-
-<style>
-
-</style>
